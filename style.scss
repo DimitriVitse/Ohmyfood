@@ -5,16 +5,43 @@ $color-primary:#9356DC;
 $color-secondary:#FF79DA;
 $color-tertiary:#99E2D0;
 
+body
+{
+    margin: 0;
+    font-family: "roboto",sans-serif;
+}
+h1
+{
+font-family: 'Shrikhand', cursive;;
+}
 header
 {
-    box-shadow: black;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    box-shadow: -10px 0px 0px 0px rgba($color: #000000, $alpha: 0.5) ;
     a
     {
-        text-align: center;
+       text-align: center;
         img 
         {
-            width: auto;
+            width: 80%;
+          
         }
     }
     
+}
+#recherche{
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i{
+       margin-right: 5%;
+    }
+}
+.preface
+{
+    background-color: #f6f6f6;
 }
