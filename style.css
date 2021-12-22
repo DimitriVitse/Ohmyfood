@@ -4,21 +4,20 @@ body {
   font-family: "roboto",sans-serif;
 }
 
-h1 {
-  font-family: 'Shrikhand', cursive;
+main {
+  margin-top: -25px;
 }
 
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-shadow: -10px 0px 0px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: -10px 0px 0px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px -10px 0px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px -10px 0px 0px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 header a {
@@ -26,7 +25,8 @@ header a {
 }
 
 header a img {
-  width: 80%;
+  width: 40%;
+  margin-top: 5px;
 }
 
 #recherche {
@@ -40,6 +40,8 @@ header a img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-shadow: 0px -10px 0px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px -10px 0px 0px rgba(0, 0, 0, 0.5);
 }
 
 #recherche i {
@@ -48,5 +50,33 @@ header a img {
 
 .preface {
   background-color: #f6f6f6;
+  text-align: center;
+  height: 300px;
+}
+
+.preface h1 {
+  padding-top: 25px;
+  font-size: x-large;
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+.preface h2 {
+  font-size: medium;
+  font-weight: normal;
+  margin: 0px 65px 50px 65px;
+}
+
+.preface #explore a {
+  text-decoration: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 30px;
+  color: white;
+  padding: 13px 20px;
+}
+
+.preface #explore a:hover, .preface #explore a:active {
+  opacity: 0.8;
 }
 /*# sourceMappingURL=style.css.map */
