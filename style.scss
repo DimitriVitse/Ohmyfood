@@ -1,80 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
-
-$color-primary:#9356DC;
-$color-secondary:#FF79DA;
-$color-tertiary:#99E2D0;
-
-body
-{
-    margin: 0;
-    font-family: "roboto",sans-serif;
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+@keyframes spinner {
+    0% 
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg) ;
+    }
 }
-main
-{
+@keyframes hide {
+    0%
+    {
+        opacity: 0.7;
+    }
+    50%
+    {
+        opacity: 0.5;
+    }
+    100%
+    {
+        opacity: 0;
+        visibility: hidden;
+    } 
+}
+body {
+    margin: 0;
+    font-family: "roboto", sans-serif;
+}
+#loading {
+    text-align: center;
+    position: absolute;
+    background-color: $color-tertiary;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: hide;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+        i {
+        font-size: 200px;
+        animation-duration: 2.5s;
+        animation-name: spinner;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        color: $color-primary;
+    }
+}
+main {
     margin-top: -25px;
 }
 
-header
-{
+header {
     display: flex;
     justify-content: center;
-    box-shadow: 0px -10px 0px 0px rgba($color: #000000, $alpha: 0.5) ;
-    z-index: 1;
-    a
-    {
-       text-align: center;
-        img 
-        {
+    a {
+        text-align: center;
+        img {
             width: 40%;
             margin-top: 5px;
         }
     }
-    
 }
-#recherche{
+#recherche {
     background-color: #eaeaea;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px -10px 0px 0px rgba($color: #000000, $alpha: 0.5) ;
+    box-shadow: inset 0px 1px 3px 0px rgba($color: #000000, $alpha: 0.3);
 
-    i{
-       margin-right: 5%;
+    i {
+        margin-right: 5%;
     }
 }
-.preface
-{
-    
+.preface {
     background-color: #f6f6f6;
     text-align: center;
     height: 300px;
-    h1{
+    h1 {
         padding-top: 25px;
         font-size: x-large;
         margin-left: 65px;
         margin-right: 65px;
     }
-    h2
-{
-    font-size: medium;
-    font-weight: normal;
-    margin: 0px 65px 50px 65px;
-}
-        #explore
-        {      
-         a
-         {
+    h2 {
+        font-size: medium;
+        font-weight: normal;
+        margin: 0px 65px 50px 65px;
+    }
+    #explore {
+        a {
             text-decoration: none;
             background: linear-gradient($color-secondary, $color-primary);
             border-radius: 30px;
             color: white;
             padding: 13px 20px;
-            &:hover,&:active
-            {
-                opacity:0.8;
+            &:hover,
+            &:active {
+                opacity: 0.8;
             }
-         }
         }
+    }
+}
+#tutorial {
+    margin-left: 1%;
+    .fonction-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin-left: 5%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 10px;
+        margin: 5%;
+        p:first-child {
+            background-color: $color-primary;
+            border-radius: 50%;
+            width: 6%;
+            margin-left: -3%;
+            color: white;
+            text-align: center;
+            height: 20px;
+        }
+        i {
+            color: grey;
+            font-size: larger;
+        }
+        p:last-child {
+            margin-right: 20%;
+            font-size: larger;
+            font-weight: bold;
+        }
+        &:hover {
+            background-color: rgba($color: $color-secondary, $alpha: 0.2);
 
+            i {
+                color: $color-primary;
+            }
+        }
+    }
+}
+section {
+    height: 1100px;
+    background-color: #eaeaea;
+}
+.carte {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 95%;
+    height: 250px;
+    background-color: white;
+    margin: 2.5%;
+    img {
+        width: 100%;
+        height: 70%;
+        border-radius: 15px 15px 0px 0px;
+        object-fit: cover;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .souscarte {
+        display: flex;
+        justify-content: space-between;
+        i {
+            margin: 6%;
+        }
+        div > * {
+            margin: 5px;
+        }
+    }
+}
+footer {
+    background-color: #353535;
+    height: 175px;
+    img {
+        filter: invert(1);
+        width: 30%;
+        margin: 5%;
+    }
+    nav {
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding-left: 5%;
+            line-height: 25px;
+            a {
+                text-decoration: none;
+                i {
+                    color: white;
+                }
+                span {
+                    color: white;
+                }
+            }
+        }
+    }
 }
