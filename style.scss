@@ -4,29 +4,48 @@ $color-primary: #9356dc;
 $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
 @keyframes spinner {
-    0% 
-    {
+    from {
         transform: rotate(0deg);
     }
-    100%
-    {
-        transform: rotate(360deg) ;
+    to {
+        transform: rotate(360deg);
     }
 }
 @keyframes hide {
-    0%
-    {
-        opacity: 0.7;
+    from {
+        opacity: 1;
     }
-    50%
-    {
-        opacity: 0.5;
-    }
-    100%
-    {
+    to {
         opacity: 0;
         visibility: hidden;
-    } 
+    }
+}
+
+@keyframes fill {
+    from {
+        display: none;
+    }
+    to {
+        z-index: 1;
+        display: block;
+    }
+}
+@keyframes espace {
+    from {
+        margin-top: 50px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 25px;
+        opacity: 1;
+    }
+}
+@mixin bouton {
+    text-decoration: none;
+    background: linear-gradient($color-secondary, $color-primary);
+    border-radius: 30px;
+    color: white;
+    padding: 13px 20px;
 }
 body {
     margin: 0;
@@ -35,7 +54,7 @@ body {
 #loading {
     text-align: center;
     position: absolute;
-    background-color: $color-tertiary;
+    background-color: white;
     width: 100%;
     height: 100%;
     display: flex;
@@ -45,7 +64,7 @@ body {
     animation-duration: 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-        i {
+    i {
         font-size: 200px;
         animation-duration: 2.5s;
         animation-name: spinner;
@@ -61,12 +80,9 @@ main {
 header {
     display: flex;
     justify-content: center;
-    a {
-        text-align: center;
-        img {
-            width: 40%;
-            margin-top: 5px;
-        }
+    img {
+        width: 40%;
+        margin-top: 5px;
     }
 }
 #recherche {
@@ -75,9 +91,13 @@ header {
     align-items: center;
     justify-content: center;
     box-shadow: inset 0px 1px 3px 0px rgba($color: #000000, $alpha: 0.3);
-
     i {
         margin-right: 5%;
+    }
+}
+#img-restau {
+    img {
+        width: 100%;
     }
 }
 .preface {
@@ -96,7 +116,7 @@ header {
         margin: 0px 65px 50px 65px;
     }
     #explore {
-        a {
+        .bouton-explore {
             text-decoration: none;
             background: linear-gradient($color-secondary, $color-primary);
             border-radius: 30px;
@@ -148,34 +168,103 @@ header {
     }
 }
 section {
-    height: 1100px;
-    background-color: #eaeaea;
-}
-.carte {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    width: 95%;
-    height: 250px;
-    background-color: white;
-    margin: 2.5%;
-    img {
-        width: 100%;
-        height: 70%;
-        border-radius: 15px 15px 0px 0px;
-        object-fit: cover;
-    }
-    a {
-        text-decoration: none;
-        color: black;
-    }
-    .souscarte {
-        display: flex;
-        justify-content: space-between;
-        i {
-            margin: 6%;
+    height: fit-content;
+    background-color: rgba($color: $color-tertiary, $alpha: 0.3);
+    padding-left: 2%;
+
+    .carte-restaurant {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        width: 95%;
+        height: 250px;
+        background-color: white;
+        margin: 2.5%;
+        position: relative;
+        #new {
+            position: absolute;
+            top: 1%;
+            right: 2%;
+            background-color: $color-tertiary;
+            padding: 1%;
+            border-radius: 3px;
+            color: darkgreen;
         }
-        div > * {
-            margin: 5px;
+        img {
+            width: 100%;
+            height: 70%;
+            border-radius: 15px 15px 0px 0px;
+            object-fit: cover;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .souscarte-restaurant {
+            display: flex;
+            justify-content: space-between;
+            i {
+                margin: 6%;
+            }
+            .fas {
+                opacity: 0;
+                transition: 1s;
+                position: absolute;
+                right: 38px;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            .fa-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                background-image: -webkit-gradient(
+                    linear,
+                    left top,
+                    left bottom,
+                    from($color-primary),
+                    to($color-secondary)
+                );
+            }
+
+            div > * {
+                margin: 5px;
+            }
+        }
+    }
+    article {
+        .all-card {
+            .card {
+                border: 1px solid black;
+                width: 95%;
+                border-radius: 15px;
+                display: flex;
+                overflow: hidden;
+                margin-top: 25px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                animation-name: espace;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+                &:nth-child(1) {
+                    animation-duration: 1s;
+                }
+                &:nth-child(2) {
+                    animation-duration: 1.5s;
+                }
+                &:nth-child(3) {
+                    animation-duration: 2s;
+                }
+            }
+        }
+    }
+}
+#bouton-buy {
+    a {
+        @extend .bouton-explore;
+        &:hover,
+        &:active {
+            opacity: 0.8;
         }
     }
 }
