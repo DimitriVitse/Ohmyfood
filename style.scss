@@ -3,7 +3,7 @@
 $color-primary: #9356dc;
 $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
-@keyframes spinner {
+@keyframes loading-spinner {
     from {
         transform: rotate(0deg);
     }
@@ -11,7 +11,7 @@ $color-tertiary: #99e2d0;
         transform: rotate(360deg);
     }
 }
-@keyframes hide {
+@keyframes hide-spinner {
     from {
         opacity: 1;
     }
@@ -21,16 +21,7 @@ $color-tertiary: #99e2d0;
     }
 }
 
-@keyframes fill {
-    from {
-        display: none;
-    }
-    to {
-        z-index: 1;
-        display: block;
-    }
-}
-@keyframes espace {
+@keyframes display-menu {
     from {
         margin-top: 50px;
         opacity: 0;
@@ -40,13 +31,6 @@ $color-tertiary: #99e2d0;
         opacity: 1;
     }
 }
-@mixin bouton {
-    text-decoration: none;
-    background: linear-gradient($color-secondary, $color-primary);
-    border-radius: 30px;
-    color: white;
-    padding: 13px 20px;
-}
 h1 {
     font-family: "Shrikhand", sans-serif;
 }
@@ -55,23 +39,26 @@ body {
     font-family: "roboto", sans-serif;
 }
 #loading {
-    text-align: center;
-    vertical-align: middle;
     position: fixed;
     background-color: white;
     width: 100%;
     height: 100%;
-    animation-name: hide;
+    animation-name: hide-spinner;
     animation-duration: 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    z-index: 100;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
     i {
         font-size: 200px;
         animation-duration: 2.5s;
-        animation-name: spinner;
+        animation-name: loading-spinner;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         color: $color-primary;
+        
     }
 }
 main {
@@ -87,7 +74,7 @@ main {
   .fas
 {
   position:absolute;
-  top:38px;
+  top:34px;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -168,7 +155,8 @@ header {
     }
     h1
     {
-        font-size: 33px;
+        font-size: 30px;
+        font-weight: 100;
     }
 }
 #tutorial {
@@ -227,7 +215,7 @@ section {
         background-color: white;
         margin: 2.5%;
         position: relative;
-        #new {
+        .new {
             position: absolute;
             top: 1%;
             right: 2%;
@@ -282,6 +270,7 @@ section {
     }
     article {
         h2 {
+            font-weight: 200;
             &::after {
                 content: "";
                 display: block;
@@ -293,17 +282,16 @@ section {
 
         .all-card {
             .card {
-                border: 1px solid black;
                 width: 95%;
                 border-radius: 15px;
                 display: flex;
                 overflow: hidden;
                 margin-top: 25px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                animation-name: espace;
+                animation-name: display-menu;
                 animation-iteration-count: 1;
                 animation-fill-mode: forwards;
-                height: 75px;
+                height: fit-content;
                 &:nth-child(1) {
                     animation-duration: 1s;
                 }
@@ -314,7 +302,7 @@ section {
                     animation-duration: 2s;
                 }
                 &:nth-child(4) {
-                    animation-duration: 2s;
+                    animation-duration: 2.5s;
                 }
                 > div:last-child {
                     width: 0px;
@@ -334,20 +322,30 @@ section {
                     display: flex;
                     justify-content: space-between;
 
-                    p:first-child {
+                    p{
+                        margin-top: 0;
+                    &:first-child {
                         text-overflow: ellipsis;
                         white-space: nowrap;
                         overflow: hidden;
                         width: 100px;
                         flex: 1 1 100px;
                     }
+                    &:last-child
+                    {
+                        font-weight: bold;
+                        margin-right: 20px;
+                    }
+                }
                 }
                 .card-content {
                     width: 100%;
-                    margin-left: 1%;
+                    margin-left: 10px;
+                    padding-top: 5px;
                     h3 {
-                        margin-top: 2%;
-                        margin-bottom: 1%;
+                        margin-top: 6px;
+                        margin-bottom: 5px;
+                        font-size:17px;
                     }
                 }
                 .sous-card-tick {
@@ -355,6 +353,7 @@ section {
                     .fas {
                         font-size: 25px;
                         transform: rotate(90deg);
+                        color: white;
                     }
                 }
             }
@@ -381,7 +380,8 @@ section {
 }
 footer {
     background-color: #353535;
-    height: 175px;
+    height: fit-content;
+    padding-bottom: 20px;
     img {
         filter: invert(1);
         width: 30%;
@@ -397,6 +397,8 @@ footer {
                 text-decoration: none;
                 i {
                     color: white;
+                    font-size: 12px;
+                    margin-right: 5px;
                 }
                 span {
                     color: white;
