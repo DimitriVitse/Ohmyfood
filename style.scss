@@ -47,7 +47,7 @@ body {
     animation-duration: 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    z-index: 100;   
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,43 +58,38 @@ body {
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         color: $color-primary;
-        
     }
 }
 main {
     margin-top: -25px;
 }
-.heart
-{
-  width:50px;
-  &:hover .fas 
-  {
-    transform:scale(1.1);
-  }
-  .fas
-{
-  position:absolute;
-  top:34px;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient($color-primary,$color-secondary);
-  transition:2s;
-  transform:scale(0);
-}
+.heart {
+    width: 50px;
+    &:hover .fas {
+        transform: scale(1.1);
+    }
+    .fas {
+        position: absolute;
+        top: 34px;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: linear-gradient($color-primary, $color-secondary);
+        transition: 2s;
+        transform: scale(0);
+    }
 }
 
 header {
     margin: 2%;
+    display: flex;
+    align-items: center;
     #header-image {
         width: 100%;
     }
     #header-arrow {
         a {
             color: black;
-            position: absolute;
-            left: 4%;
-            top: 1.5%;
         }
     }
     img {
@@ -127,6 +122,7 @@ header {
         font-size: x-large;
         margin-left: 65px;
         margin-right: 65px;
+        font-family: "roboto", serif;
     }
     h2 {
         font-size: medium;
@@ -140,9 +136,12 @@ header {
     border-radius: 30px;
     color: white;
     padding: 13px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     &:hover,
     &:active {
         opacity: 0.8;
+        opacity: 0.8;
+        box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2);
     }
 }
 #nom-restaurant {
@@ -153,8 +152,7 @@ header {
         font-size: 25px;
         margin-right: 35px;
     }
-    h1
-    {
+    h1 {
         font-size: 30px;
         font-weight: 100;
     }
@@ -172,9 +170,9 @@ header {
         margin: 5%;
         p:first-child {
             background-color: $color-primary;
-            border-radius: 50%;
-            width: 6%;
-            margin-left: -3%;
+            border-radius: 10px;
+            width: 20px;
+            margin-left: -8px;
             color: white;
             text-align: center;
             height: 20px;
@@ -197,8 +195,7 @@ header {
         }
     }
 }
-.section-restau
-{
+.section-restau {
     border-radius: 30px 30px 0 0;
     position: relative;
     margin-top: -15%;
@@ -215,7 +212,7 @@ section {
         background-color: white;
         margin: 2.5%;
         position: relative;
-        .new {
+        .tag-new {
             position: absolute;
             top: 1%;
             right: 2%;
@@ -237,30 +234,17 @@ section {
         .souscarte-restaurant {
             display: flex;
             justify-content: space-between;
-            i {
-                margin: 6%;
-            }
-            .fas {
-                opacity: 0;
-                transition: 1s;
-                position: absolute;
-                right: 38px;
-
-                &:hover {
-                    opacity: 1;
+            align-items: center;
+            .heart {
+                font-size: 25px;
+                position: relative;
+                .fas {
+                    top: 0px;
+                    right: 14px;
                 }
             }
-            .fa-gradient {
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
-                background-image: -webkit-gradient(
-                    linear,
-                    left top,
-                    left bottom,
-                    from($color-primary),
-                    to($color-secondary)
-                );
+            i {
+                margin: 6%;
             }
 
             div > * {
@@ -322,21 +306,20 @@ section {
                     display: flex;
                     justify-content: space-between;
 
-                    p{
+                    p {
                         margin-top: 0;
-                    &:first-child {
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        width: 100px;
-                        flex: 1 1 100px;
+                        &:first-child {
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            width: 100px;
+                            flex: 1 1 100px;
+                        }
+                        &:last-child {
+                            font-weight: bold;
+                            margin-right: 20px;
+                        }
                     }
-                    &:last-child
-                    {
-                        font-weight: bold;
-                        margin-right: 20px;
-                    }
-                }
                 }
                 .card-content {
                     width: 100%;
@@ -345,7 +328,7 @@ section {
                     h3 {
                         margin-top: 6px;
                         margin-bottom: 5px;
-                        font-size:17px;
+                        font-size: 17px;
                     }
                 }
                 .sous-card-tick {
@@ -359,11 +342,10 @@ section {
             }
         }
     }
-#commander
-{
-    padding: 35px 0px 60px 0px;
-    text-align: center;
-}
+    #commander {
+        padding: 35px 0px 60px 0px;
+        text-align: center;
+    }
 }
 #bouton-buy {
     a {
@@ -372,9 +354,11 @@ section {
         border-radius: 30px;
         color: white;
         padding: 13px 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         &:hover,
         &:active {
             opacity: 0.8;
+            box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2);
         }
     }
 }
@@ -402,6 +386,73 @@ footer {
                 }
                 span {
                     color: white;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 768px) {
+    header {
+        img {
+            width: 30%;
+        }
+        #header-arrow {
+            a {
+                font-size: 25px;
+            }
+        }
+    }
+
+    #tutorial {
+        #all-fonction-card {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            .fonction-card {
+                gap: 15px;
+                width: 40%;
+                margin: 0;
+                justify-content: flex-start;
+                p {
+                    &:last-child {
+                        padding: 5px;
+                        margin-right: 13%;
+                    }
+                }
+            }
+        }
+    }
+    #all-card-homepage {
+        display: flex;
+        flex-wrap: wrap;
+        .carte-restaurant {
+            width: 45%;
+            height: 300px;
+            a {
+                img {
+                    height: 75%;
+                }
+            }
+        }
+    }
+    footer {
+        img {
+            width: 20%;
+            margin: 2.5% 5%;
+        }
+    }
+    section {
+        article {
+            .all-card {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                .card
+                {
+                    width: 45%;
                 }
             }
         }

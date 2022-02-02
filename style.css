@@ -138,6 +138,12 @@ main {
 
 header {
   margin: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header #header-image {
@@ -146,9 +152,6 @@ header #header-image {
 
 header #header-arrow a {
   color: black;
-  position: absolute;
-  left: 4%;
-  top: 1.5%;
 }
 
 header img {
@@ -191,6 +194,7 @@ header img {
   font-size: x-large;
   margin-left: 65px;
   margin-right: 65px;
+  font-family: "roboto", serif;
 }
 
 .preface h2 {
@@ -206,10 +210,15 @@ header img {
   border-radius: 30px;
   color: white;
   padding: 13px 20px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .bouton:hover, .bouton:active {
   opacity: 0.8;
+  opacity: 0.8;
+  -webkit-box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2);
 }
 
 #nom-restaurant {
@@ -258,9 +267,9 @@ header img {
 
 #tutorial .fonction-card p:first-child {
   background-color: #9356dc;
-  border-radius: 50%;
-  width: 6%;
-  margin-left: -3%;
+  border-radius: 10px;
+  width: 20px;
+  margin-left: -8px;
   color: white;
   text-align: center;
   height: 20px;
@@ -310,7 +319,7 @@ section .carte-restaurant {
   position: relative;
 }
 
-section .carte-restaurant .new {
+section .carte-restaurant .tag-new {
   position: absolute;
   top: 1%;
   right: 2%;
@@ -340,29 +349,23 @@ section .carte-restaurant .souscarte-restaurant {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .carte-restaurant .souscarte-restaurant .heart {
+  font-size: 25px;
+  position: relative;
+}
+
+section .carte-restaurant .souscarte-restaurant .heart .fas {
+  top: 0px;
+  right: 14px;
 }
 
 section .carte-restaurant .souscarte-restaurant i {
   margin: 6%;
-}
-
-section .carte-restaurant .souscarte-restaurant .fas {
-  opacity: 0;
-  -webkit-transition: 1s;
-  transition: 1s;
-  position: absolute;
-  right: 38px;
-}
-
-section .carte-restaurant .souscarte-restaurant .fas:hover {
-  opacity: 1;
-}
-
-section .carte-restaurant .souscarte-restaurant .fa-gradient {
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
 }
 
 section .carte-restaurant .souscarte-restaurant div > * {
@@ -511,10 +514,14 @@ section #commander {
   border-radius: 30px;
   color: white;
   padding: 13px 20px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 #bouton-buy a:hover, #bouton-buy a:active {
   opacity: 0.8;
+  -webkit-box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -551,5 +558,73 @@ footer nav ul a i {
 
 footer nav ul a span {
   color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  header img {
+    width: 30%;
+  }
+  header #header-arrow a {
+    font-size: 25px;
+  }
+  #tutorial #all-fonction-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 15px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #tutorial #all-fonction-card .fonction-card {
+    gap: 15px;
+    width: 40%;
+    margin: 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  #tutorial #all-fonction-card .fonction-card p:last-child {
+    padding: 5px;
+    margin-right: 13%;
+  }
+  #all-card-homepage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #all-card-homepage .carte-restaurant {
+    width: 45%;
+    height: 300px;
+  }
+  #all-card-homepage .carte-restaurant a img {
+    height: 75%;
+  }
+  footer img {
+    width: 20%;
+    margin: 2.5% 5%;
+  }
+  section article .all-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 15px;
+  }
+  section article .all-card .card {
+    width: 45%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
