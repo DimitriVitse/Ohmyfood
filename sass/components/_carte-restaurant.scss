@@ -1,0 +1,64 @@
+.carte-restaurant {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 95%;
+    height: 250px;
+    background-color: white;
+    margin: 2.5%;
+    position: relative;
+    .tag-new {
+        position: absolute;
+        top: 1%;
+        right: 2%;
+        background-color: $color-tertiary;
+        padding: 1%;
+        border-radius: 3px;
+        color: darkgreen;
+    }
+    img {
+        width: 100%;
+        height: 70%;
+        border-radius: 15px 15px 0px 0px;
+        object-fit: cover;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .souscarte-restaurant {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .heart {
+            font-size: 25px;
+            position: relative;
+            .fas {
+                top: 0px;
+                right: 14px;
+            }
+        }
+        i {
+            margin: 6%;
+        }
+
+        div > * {
+            margin: 5px;
+        }
+    }
+}
+@media only screen and (min-width: 768px)
+{
+    #all-card-homepage {
+        display: flex;
+        flex-wrap: wrap;
+        .carte-restaurant {
+            width: 45%;
+            height: 300px;
+            a {
+                img {
+                    height: 75%;
+                }
+            }
+        }
+    }
+}

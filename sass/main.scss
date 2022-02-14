@@ -1,0 +1,28 @@
+@import "./utils/variables";
+@import "./utils/keyframes";
+
+@import "./base/tags";
+@import "./base/fonts";
+@import "./base/section";
+
+@import "./components/recherche";
+@import "./components/boutons";
+@import "./components/card";
+@import "./components/spinner";
+@import "./components/heart";
+@import "./components/carte-restaurant";
+@import "./components/section-restau";
+
+@import "./layouts/header";
+@import "./layouts/images";
+@import "./layouts/nom-restaurant";
+@import "./layouts/article";
+@import "./layouts/footer";
+
+@import "./pages/tutorial";
+@import "./pages/preface";
+
+@import "./vendors/googlefonts"
+
+
+

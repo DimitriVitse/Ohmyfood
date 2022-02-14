@@ -1,0 +1,16 @@
+.heart {
+    width: 50px;
+    &:hover .fas {
+        transform: scale(1.1);
+    }
+    .fas {
+        position: absolute;
+        top: 34px;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: linear-gradient($color-primary, $color-secondary);
+        transition: 2s;
+        transform: scale(0);
+    }
+}

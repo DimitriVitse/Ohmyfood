@@ -1,0 +1,62 @@
+#tutorial {
+    margin-left: 1%;
+    .fonction-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin-left: 5%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 10px;
+        margin: 5%;
+        p:first-child {
+            background-color: $color-primary;
+            border-radius: 10px;
+            width: 20px;
+            margin-left: -8px;
+            color: white;
+            text-align: center;
+            height: 20px;
+        }
+        i {
+            color: grey;
+            font-size: larger;
+        }
+        p:last-child {
+            margin-right: 20%;
+            font-size: larger;
+            font-weight: bold;
+        }
+        &:hover {
+            background-color: rgba($color: $color-secondary, $alpha: 0.2);
+
+            i {
+                color: $color-primary;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 768px)
+{
+    #tutorial {
+        #all-fonction-card {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            .fonction-card {
+                gap: 15px;
+                width: 40%;
+                margin: 0;
+                justify-content: flex-start;
+                p {
+                    &:last-child {
+                        padding: 5px;
+                        margin-right: 13%;
+                    }
+                }
+            }
+        }
+    }
+}

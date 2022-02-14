@@ -1,0 +1,33 @@
+.bouton {
+    text-decoration: none;
+    background: linear-gradient($color-secondary, $color-primary);
+    border-radius: 30px;
+    color: white;
+    padding: 13px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    &:hover,
+    &:active {
+        opacity: 0.8;
+        opacity: 0.8;
+        box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2);
+    }
+}
+#commander {
+    padding: 35px 0px 60px 0px;
+    text-align: center;
+}
+#bouton-buy {
+    a {
+        text-decoration: none;
+        background: linear-gradient($color-secondary, $color-primary);
+        border-radius: 30px;
+        color: white;
+        padding: 13px 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        &:hover,
+        &:active {
+            opacity: 0.8;
+            box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2);
+        }
+    }
+}

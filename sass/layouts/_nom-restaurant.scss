@@ -1,0 +1,13 @@
+#nom-restaurant {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    i {
+        font-size: 25px;
+        margin-right: 35px;
+    }
+    h1 {
+        font-size: 30px;
+        font-weight: 100;
+    }
+}

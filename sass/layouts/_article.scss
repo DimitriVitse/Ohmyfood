@@ -1,0 +1,12 @@
+article {
+    h2 {
+        font-weight: 200;
+        &::after {
+            content: "";
+            display: block;
+            width: 45px;
+            padding-top: 5px;
+            border-bottom: 5px solid $color-tertiary;
+        }
+    }
+}
